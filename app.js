@@ -29,12 +29,20 @@ const changeName = () => {
     myName.textContent = value;
 };
 
+function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+        changeName()
+    }
+}
+
 
 buttonPress.addEventListener('click', changeName);
 
 secondButton.addEventListener('click', changeColor);
 
 nameForm.addEventListener('submit', submitForm);
+
+window.addEventListener('keydown', handleKeyPress)
 
 console.log('fd')
 
