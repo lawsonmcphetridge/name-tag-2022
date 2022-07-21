@@ -8,14 +8,6 @@ const secondButton = document.getElementById('secondButton');
 
 const nameForm = document.getElementById('nameForm');
 
-buttonPress.addEventListener('click', changeName);
-
-secondButton.addEventListener('click', changeColor);
-
-nameForm.addEventListener('submit', submitForm);
-
-console.log('fd')
-
 function submitForm(e) {
     e.preventDefault();
 }
@@ -36,3 +28,14 @@ const changeName = () => {
     const value = yourName.value;
     myName.textContent = value;
 };
+
+
+buttonPress.addEventListener('click', changeName);
+
+secondButton.addEventListener('click', changeColor);
+
+nameForm.addEventListener('submit', submitForm);
+
+console.log('fd')
+
+
