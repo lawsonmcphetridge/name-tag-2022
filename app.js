@@ -1,22 +1,38 @@
-const myName = document.getElementById('myName')
+const myName = document.getElementById('myName');
 
-const buttonPress = document.getElementById('bestButton')
+const buttonPress = document.getElementById('bestButton');
 
-const inputName = document.getElementById('yourName')
+const inputName = document.getElementById('yourName');
 
-const secondButton = document.getElementById('secondButton')
+const secondButton = document.getElementById('secondButton');
 
-buttonPress.addEventListener ('click', () => {
-  const value = yourName.value;
-  myName.textContent = value;
-});
+const nameForm = document.getElementById('nameForm');
 
-secondButton.addEventListener ('click', function(){
-let colors = ['blue', 'yellow', 'black', 'red', 'brown', 'orange'];
-const randomColor = colors[Math.floor(Math.random() * colors.length)]
-let topNameTag = document.getElementById('topNameTag');
-topNameTag.style.background = randomColor;
-let bottomNameTag = document.getElementById('bottomNameTag');
-bottomNameTag.style.background = randomColor;
+buttonPress.addEventListener('click', changeName);
 
-});
+secondButton.addEventListener('click', changeColor);
+
+nameForm.addEventListener('submit', submitForm);
+
+console.log('fd')
+
+function submitForm(e) {
+    e.preventDefault();
+}
+
+function changeColor() {
+    let colors = ['blue', 'yellow', 'black', 'red', 'brown', 'orange'];
+
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    let topNameTag = document.getElementById('topNameTag');
+    topNameTag.style.background = randomColor;
+
+    let bottomNameTag = document.getElementById('bottomNameTag');
+    bottomNameTag.style.background = randomColor;
+}
+
+const changeName = () => {
+    const value = yourName.value;
+    myName.textContent = value;
+};
